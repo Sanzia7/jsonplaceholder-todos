@@ -1,61 +1,28 @@
-import { useState} from 'react'
-import {
-	usePlaceholderGet,
-	// usePlaceholderAdd,
-	// usePlaceholderDelete,
-	// usePlaceholderUpdate,
-} from './hooks-json-placeholder'
+import { useState } from 'react'
+import { usePlaceholderGet } from './hooks-json-placeholder'
 
-import {TodoList} from './components'
-// import {sortingTodos} from './utils'
+import { TodoList } from './components'
+import { sortingTodos } from './utils'
 import styles from './app.module.css'
 
 export const App = () => {
-	const [refreshTodosFlag, setRefreshTodosFlag] = useState(false)
-	// const [isSorted, setIsSorted] = useState(false)
+	const [isSorted, setIsSorted] = useState(false)
 
-	// const refreshTodos = () => setRefreshTodosFlag(!refreshTodosFlag)
-//
-	const {isLoading, todos} = usePlaceholderGet(refreshTodosFlag)
+	const { isLoading, todos } = usePlaceholderGet()
 
-
-
-
-	// const sortedTodos = isSorted ? sortingTodos(todos) : todos
-
-	// const { isCreating, requestAddTodo } = usePlaceholderAdd(refreshTodos)
-
-	// const { isDeleting, requestDeleteTodo } = usePlaceholderDelete(refreshTodos)
-//
-	// // const { isUpdating, requestUpdateTodos } = usePlaceholderUpdate(refreshTodos)
+	const sortedTodos = isSorted ? sortingTodos(todos) : todos
 
 	return (
 		<div className={styles.app}>
 			<h1>JSON Placeholder Todo App</h1>
 
-			{/* <button onClick={() => setIsSorted(!isSorted)}>Sorting: A-B</button> */}
-
-			{/* <button disabled={isCreating} onClick={requestAddTodo}> */}
-				{/* Add new Todo */}
-			{/* </button> */}
-			{/* <button disabled={isDeleting} onClick={requestDeleteTodo}> */}
-				{/* Remove */}
-			{/* </button> */}
-			{/* <button disabled={isUpdating} onClick={requestUpdateTodos}> */}
-				{/* Update Todos */}
-			{/* </button> */}
+			<button onClick={() => setIsSorted(!isSorted)}>Sorting: A-B</button>
 
 			{isLoading ? (
 				<div className={styles.loader}></div>
 			) : (
-				// <TodoList todos={sortedTodos} />
-				<TodoList todos={todos} />
+				<TodoList todos={sortedTodos} />
 			)}
 		</div>
 	)
 }
-
-
-
-
-

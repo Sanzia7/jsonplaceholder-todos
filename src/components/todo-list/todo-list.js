@@ -12,13 +12,3 @@ export const TodoList = ({ todos }) => {
 	)
 }
 
-// export const TodoList = ({ todos, deleteTodo }) => {
-// 	return (
-// 		<div className={styles.container}>
-// 			{!todos.length && <h1>Todo list is empty</h1>}
-// 			{todos.map((todo) => (
-// 				<Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
-// 			))}
-// 		</div>
-// 	)
-// }

@@ -29,29 +29,10 @@
 }
 
 .todo.completedTodo .todoIcon,
-.todo.completedTodo .deleteIcon {
+.todo.completedTodo {
 	color: skyblue;
 }
-.todo.completedTodo .deleteIcon:hover {
-	color: yellow;
-}
 
-.deleteIcon {
-	cursor: pointer;
-	color: rgb(148, 128, 128);
-	font-size: 2.4rem;
-	transition: transform 0.5s;
-}
-
-
-.deleteIcon:hover {
-	cursor: pointer;
-	transform: scale(1.5);
-	color: red;
-}
-
-
-
-.deleteIcon:hover {
-	color: red;
+.todo.completedTodo {
+	color: lemonchiffon;
 }

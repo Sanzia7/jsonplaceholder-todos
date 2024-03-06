@@ -1,3 +1,3 @@
-// export * from './sorting-todos'
+export * from './sorting-todos'
 
 

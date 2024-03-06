@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export const usePlaceholderGet = (refreshTodosFlag) => {
+export const usePlaceholderGet = () => {
 	const [todos, setTodos] = useState([])
 
 	const [isLoading, setIsLoading] = useState(false)
@@ -14,13 +14,14 @@ export const usePlaceholderGet = (refreshTodosFlag) => {
 				setTodos(loadedTodos)
 			})
 			.finally(() => setIsLoading(false))
-	}, [refreshTodosFlag])
+	}, [])
 
 	return {
 		isLoading,
 		todos,
 	}
 }
+
 
 
 
