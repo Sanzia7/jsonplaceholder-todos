@@ -13,19 +13,20 @@ h1 {
 button {
 	margin: 15px 20px;
 	cursor: pointer;
-	background-color: rgb(210, 240, 249);
+	background-color:rgb(251, 227, 70);
 	color: rgb(3, 119, 173);
 	height: 50px;
 	font-size: 1.5rem;
 	padding: 10px 15px;
 	border: none;
 	border-radius: 5px;
-	box-shadow: 1px 1px 1px;
+	box-shadow: 2px 1px 3px;
 }
 
 button:hover {
-	background-color: lightsalmon;
-	color: rgb(178, 50, 4);
+	background-color:rgb(4, 247, 247);
+	color: whitesmoke;
+	border: none;
 
 }
 
