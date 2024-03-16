@@ -7,9 +7,8 @@ export const usePlaceholderGet = () => {
 
 	useEffect(() => {
 		setIsLoading(true)
-
 		fetch('https://jsonplaceholder.typicode.com/todos?_limit=20')
-			.then((loadedData) => loadedData.json())
+			.then((todosData) => todosData.json())
 			.then((loadedTodos) => {
 				setTodos(loadedTodos)
 			})

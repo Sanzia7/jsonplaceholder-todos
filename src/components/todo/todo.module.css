@@ -28,11 +28,35 @@
 	color: rgb(98, 136, 136);
 }
 
-.todo.completedTodo .todoIcon,
-.todo.completedTodo {
+.todo.completedTodo .todoIcon {
 	color: skyblue;
 }
 
 .todo.completedTodo {
 	color: lemonchiffon;
+}
+
+.todo.completedTodo .checkIcon {
+	color: lightgreen;
+}
+
+.checkIcon {
+	cursor: pointer;
+	color: lightgrey;
+	padding: 0 7px;
+	/* font-size: 1.8rem; */
+	font-size: 2.5rem;
+	transition: transform 0.3s;
+}
+
+.checkIcon:hover{
+	cursor: pointer;
+	transform: scale(1.5);
+	color: green;
+}
+
+.checkbox {
+	width: 20px;
+	height: 20px;
+	margin: 0 10px 0 0;
 }

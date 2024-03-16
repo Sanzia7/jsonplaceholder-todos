@@ -1,14 +1,29 @@
-//import {RiDeleteBin2Line, RiTodoFill} from 'react-icons/ri'
-import { RiTodoFill } from 'react-icons/ri'
 
+import {RiTodoFill} from 'react-icons/ri'
+import { FaCheck } from 'react-icons/fa'
 import styles from './todo.module.css'
 
-export const Todo = ({ todo }) => {
+export const Todo = ({title, completed }) => {
 	return (
-		<div className={`${styles.todo} ${todo.completed ? styles.completedTodo : ''}`}>
+		<div className={`${styles.todo} ${completed ? styles.completedTodo : ''}`}>
 			<RiTodoFill className={styles.todoIcon} />
-			<div className={styles.todoText}>{todo.title}</div>
-			{/* <RiDeleteBin2Line className={styles.deleteIcon} /> */}
+			<div className={styles.todoText}>{title}</div>
+
+			<FaCheck
+				className={styles.checkIcon}
+				// onClick={() => toggleTodo(id)}
+				onClick={completed}
+				readOnly
+			/>
+
+			{/* <input
+				className={styles.checkbox}
+				type="checkbox"
+				checked={completed}
+				readOnly
+			/> */}
+
+
 		</div>
 	)
 }
