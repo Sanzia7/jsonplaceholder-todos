@@ -27,7 +27,7 @@ button:hover {
 	background-color:rgb(4, 247, 247);
 	color: whitesmoke;
 	border: none;
-
+	box-shadow: inset 3px 2px 7px 0 deepskyblue;
 }
 
 .loader {
