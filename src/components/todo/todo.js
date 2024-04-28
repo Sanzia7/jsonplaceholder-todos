@@ -15,15 +15,14 @@ export const Todo = ({title, completed }) => {
 				onClick={completed}
 				readOnly
 			/>
-
-			{/* <input
-				className={styles.checkbox}
-				type="checkbox"
-				checked={completed}
-				readOnly
-			/> */}
-
-
 		</div>
 	)
 }
+
+
+			// <input
+			// 	className={styles.checkbox}
+			// 	type="checkbox"
+			// 	checked={completed}
+			// 	readOnly
+			// />

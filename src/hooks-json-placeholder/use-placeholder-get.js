@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 
 export const usePlaceholderGet = () => {
 	const [todos, setTodos] = useState([])
-
 	const [isLoading, setIsLoading] = useState(false)
 
 	useEffect(() => {

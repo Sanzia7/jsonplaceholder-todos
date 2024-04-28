@@ -7,9 +7,7 @@ import styles from './app.module.css'
 
 export const App = () => {
 	const [isSorted, setIsSorted] = useState(false)
-
 	const { isLoading, todos } = usePlaceholderGet()
-
 	const sortedTodos = isSorted ? sortingTodos(todos) : todos
 
 	return (
