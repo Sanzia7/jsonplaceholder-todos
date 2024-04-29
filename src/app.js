@@ -19,9 +19,7 @@ export const App = () => {
 				}
 				return todosData.json();
 				})
-			.then((loadedTodos) => {
-				setTodos(loadedTodos)
-			})
+			.then((loadedTodos) => setTodos(loadedTodos))
 			.catch(error => {
 				// Handle errors
 				console.error('There was a problem with the fetch operation:', error);
