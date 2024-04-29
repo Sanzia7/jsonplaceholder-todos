@@ -1,24 +1,34 @@
 import { useEffect, useState } from 'react'
 //import { usePlaceholderGet } from './hooks-json-placeholder'
-import { TodoList } from './components'
 import { sortingTodos } from './utils'
+import { TodoList } from './components'
 import styles from './app.module.css'
 
 export const App = () => {
-	const [isSorted, setIsSorted] = useState(false)
 	const [todos, setTodos] = useState([])
+	const [isSorted, setIsSorted] = useState(false)
 	//const { isLoading, todos } = usePlaceholderGet()
-
 
 		useEffect(() => {
 		//setIsLoading(true)
 		fetch('https://jsonplaceholder.typicode.com/todos?_limit=12')
-			.then((todosData) => todosData.json())
+			// .then((todosData) => todosData.json())
+			.then(todosData => {
+				if (!todosData.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return todosData.json();
+				})
 			.then((loadedTodos) => {
 				setTodos(loadedTodos)
 			})
+			.catch(error => {
+				// Handle errors
+				console.error('There was a problem with the fetch operation:', error);
+				})
 			//.finally(() => setIsLoading(false))
-	}, [])
+		}, [])
+
 	const sortedTodos = isSorted ? sortingTodos(todos) : todos
 
 	return (
@@ -27,12 +37,28 @@ export const App = () => {
 
 			<button onClick={() => setIsSorted(!isSorted)}>Sorting: A-B</button>
 
-			{/* {isLoading ? (
-				<div className={styles.loader}></div>
-			) : (
-				<TodoList todos={sortedTodos} />
-			)} */}
 			<TodoList todos={sortedTodos} />
 		</div>
 	)
 }
+//   fetch(url)
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+//       return response.json();
+//     })
+//     .then(data => {
+//       // Do something with the data
+//       console.log(data);
+//     })
+//     .catch(error => {
+//       // Handle errors
+//       console.error('There was a problem with the fetch operation:', error);
+//     });
+
+    // {isLoading ? (
+	// 			<div className={styles.loader}></div>
+	// 		) : (
+	// 			<TodoList todos={sortedTodos} />
+	// 		)}
